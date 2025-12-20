@@ -169,6 +169,8 @@ defmodule TunezWeb.Artists.ShowLive do
         {:noreply, socket}
 
       {:error, error} ->
+        dbg(error)
+        dbg(socket.assigns.current_user)
         Logger.info("Could not delete artist '#{socket.assigns.artist.id}':
 #{inspect(error)}")
 
